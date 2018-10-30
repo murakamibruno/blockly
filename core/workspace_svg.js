@@ -474,7 +474,7 @@ Blockly.WorkspaceSvg.prototype.createDom = function(opt_backgroundClass) {
   }
 
   if (!this.isFlyout) {
-    Blockly.bindEventWithChecks_(this.svgGroup_, 'mousedown', this,
+    Blockly.bindEventWithChecks_(this.svgGroup_, 'click', this,
         this.onMouseDown_, false, true);
     if (this.options.zoomOptions && this.options.zoomOptions.wheel) {
       // Mouse-wheel.
@@ -2053,7 +2053,7 @@ Blockly.WorkspaceSvg.prototype.removeToolboxCategoryCallback = function(key) {
  * @package
  */
 Blockly.WorkspaceSvg.prototype.getGesture = function(e) {
-  var isStart = (e.type == 'mousedown' || e.type == 'touchstart' ||
+  var isStart = (e.type == 'click' || e.type == 'touchstart' ||
       e.type == 'pointerdown');
 
   var gesture = this.currentGesture_;
