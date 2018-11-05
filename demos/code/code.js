@@ -406,7 +406,8 @@ Code.init = function() {
   }
 
   // Construct the toolbox XML, replacing translated variable names.
-  var toolboxText = document.getElementById('toolbox').outerHTML;
+  // Can be beginner, intermediate or advanced
+  var toolboxText = document.getElementById('advanced').outerHTML;
   toolboxText = toolboxText.replace(/(^|[^%]){(\w+)}/g,
       function(m, p1, p2) {return p1 + MSG[p2];});
   var toolboxXml = Blockly.Xml.textToDom(toolboxText);
@@ -420,9 +421,11 @@ Code.init = function() {
        media: '../../media/',
        rtl: rtl,
        toolbox: toolboxXml,
-       zoom:
-           {controls: true,
-            wheel: true}
+       horizontalLayout: true,
+       scrollbars:true,
+       zoom: false
+           // {controls: true,
+           //  wheel: true}
       });
 
   // Add to reserved word list: Local variables in execution environment (runJS)

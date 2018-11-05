@@ -78,6 +78,7 @@ td.tabon {
 td.taboff {
   cursor: pointer;
   padding: 5px 19px;
+  display: none;
 }
 td.taboff:hover {
   background-color: #eee;
